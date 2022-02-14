@@ -20,7 +20,7 @@ router.post("/log-in", (req, res, next) => {
                 res.render('./auth/log-in', { errorMessage: "Contraseña incorrecta." })
             } else {
                 req.session.currentUser = user
-                res.redirect('/main')
+                res.redirect('/profile')
             }
         })
 })
@@ -40,7 +40,7 @@ router.post("/sign-up", (req, res, next) => {
 })
 
 router.post("/log-out", (req, res, next) => {
-    req.session.destroy(() => res.redirect('/iniciar-sesion'))
+    req.session.destroy(() => res.redirect('/'))
 })
 
 module.exports = router

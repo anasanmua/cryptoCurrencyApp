@@ -4,7 +4,7 @@ router.get("/", (req, res, next) => {
     res.render("index")
 })
 router.get("/contact-us", (req, res, next) => {
-    res.send('contact us!! :)')
+    res.render('contact')
 })
 
 module.exports = router
