@@ -1,49 +1,34 @@
-<div class="container">
+<div class="container authforms pagecontainer">
+    <h2>Editar perfil</h2>
+    <div class="row">
+        <div class="col-6">
+            <form action="/edit-profile/{{_id}}" method="POST">
 
-    <h2>
-        Soy la página de editar
-    </h2>
+                <label for="email">Email
+                    <input type="email" name="email" value="{{email}}" class="form-control">
+                </label>
 
-    <form action="/edit-profile/{{_id}}" method=" 
-    POST">
+                <label for="username">Username
+                    <input type="username" name="username" value="{{username}}" class="form-control">
+                </label>
 
-        <label> email:
-            <input type="email" name="email" value="{{email}}">
+                <label for="name">Name
+                    <input type="text" name="name" value="{{name}}" class="form-control">
+                </label>
 
-        </label>
+                <label for="description">Description
+                    <input type="text" name="description" value="{{description}}" class="form-control">
+                </label>
 
-        <label>
-            Username:
-            <input type="username" name="username" value="{{username}}">
+                <label for="image">Image URL
+                    <input type="text" name="image" value="{{image}}" class="form-control">
+                </label>
 
-        </label>
-
-
-        <label>
-            Name:
-            <input type="text" name="name" value="{{name}}">
-
-        </label>
-
-        <label>
-            Description
-            <input type="text" name="description" value="{{description}}">
-
-        </label>
-
-        <label>
-            Image:
-            <input type="text" name="image" value="{{image}}">
-
-        </label>
-
-        <label>
-            Password
-            <input type="password" name="password" value="{{password}}">
-        </label>
-
-        <input type="submit" value="Edit Student">
-
-    </form>
-
+                <label for="password">Password
+                    <input type="password" name="password" value="{{password}}" class="form-control">
+                </label>
+                <button class="btn btn-primary">Sign-up</button>
+            </form>
+        </div>
+    </div>
 </div>

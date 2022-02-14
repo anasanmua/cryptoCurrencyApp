@@ -1,7 +1,7 @@
 const router = require("express").Router()
 
 //Requerir middleware para chekear que el User está logeado
-// const { isLoggedIn } = require()
+const { isLoggedIn } = require('../middleware/route-guard')
 
 //Requerir modelo(s)
 const User = require("../models/User.model")
@@ -13,9 +13,9 @@ const saltRounds = 10
 
 //Profile page
 
-router.get('/profile', (req, res, next) => {
-
-    res.render('user/profile-page', { user: req.session.currentUser })
+router.get("/profile", isLoggedIn, (req, res, next) => {
+    console.log(req.session.currentUser)
+    res.render("user/profile-page", { user: req.session.currentUser })
 })
 
 //Edit user
