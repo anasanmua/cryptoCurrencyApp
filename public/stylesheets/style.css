@@ -21,3 +21,48 @@ body{
 .authforms{
   height: 91.8vh
 }
+
+.warnMessage {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+}
+
+.infoMessage {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+}
+
+.logoutbtn{
+  background-color: transparent;
+  border: 0;
+}
+
+
+@keyframes dissapear {
+  0% {
+    transform: rotateX(90deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+}
+
+#warnMessage, #infoMessage {
+  animation-name: dissapear;
+  animation-duration: 2500ms;
+  animation-fill-mode: forwards;
+}

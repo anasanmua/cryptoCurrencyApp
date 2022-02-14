@@ -1,5 +1,10 @@
 <div class="container authforms pagecontainer">
     <div class="row">
+        {{#if infoMessage}}
+        <div class="infoMessage" id="infoMessage">
+            {{infoMessage}}
+        </div>
+        {{/if}}
         <div class="col-6">
             <form action="/log-in" method="POST">
                 <label>
@@ -10,6 +15,11 @@
                 </label>
                 <button class="btn btn-primary">Log-in</button>
             </form>
+            {{#if errorMessage}}
+            <div class="warnMessage" id="warnMessage">
+                {{errorMessage}}
+            </div>
+            {{/if}}
         </div>
     </div>
 </div>

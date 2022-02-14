@@ -1,4 +1,10 @@
+const req = require('express/lib/request')
+const { setLoggedUser } = require('../middleware/user-guard.js')
+
 module.exports = app => {
+
+  app.use('/', setLoggedUser)
+
   app.use('/', require('./base.routes'))
 
   app.use('/', require('./auth.routes'))

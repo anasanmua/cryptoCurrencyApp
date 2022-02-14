@@ -24,6 +24,13 @@
             <li class="nav-item">
                <a class="nav-link authbtn" href="/sign-up">Sign-up</a>
             </li>
+            {{#if loggedUser}}
+            <li class="nav-item">
+               <form action="/log-out" method="POST">
+                  <button class="nav-link authbtn logoutbtn">Logout</button>
+               </form>
+               {{/if}}
+            </li>
          </ul>
       </div>
    </nav>
