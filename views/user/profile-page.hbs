@@ -1,1 +1,19 @@
-Soy el perfil
+<div class="container">
+
+    {{#with loggedUser}}
+
+    <div class="card" style="width: 18rem;">
+        <img src="{{image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">{{description}}
+                content.</p>
+            <a href="/edit-profile" class="btn btn-primary">Edit profile</a>
+            <p class="card-text">{{role}}
+            </p>
+        </div>
+    </div>
+
+</div>
+
+{{/with}}
