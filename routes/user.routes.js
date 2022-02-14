@@ -15,7 +15,7 @@ const saltRounds = 10
 //Profile page
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
-
+    console.log(req.app.locals, '-----------', req.session.currentUser)
     res.render("user/profile-page", { user: req.session.currentUser })
 })
 
