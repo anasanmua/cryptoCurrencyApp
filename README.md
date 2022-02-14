@@ -8,6 +8,7 @@
 | POST         	| `/log-in` 	| Log-in page (handler)                                    	|  🆓|
 | GET         	| `/sign-up` 	| Sign-up (render) 	                                        |  🆓|
 | POST         	| `/sign-up` 	| Sign-up (handler) 	                                        |  🆓|
+| POST         	| `/log-out` 	| Log-out (handler) 	                                        |  🆓|
 | GET         	| `/main` 	| Main info page  for users                                     | Users |
 | GET         	| `/profile` 	| User profile 	                                       | Users |
 | GET         	| `/edit-profile` 	| Edit user profile 	   (render)                                    | Users |
