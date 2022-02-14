@@ -5,7 +5,7 @@ const saltRounds = 10
 const router = require("express").Router()
 
 router.get("/log-in", (req, res, next) => {
-    console.log(req.session)
+    console.log(req.app.locals)
     res.render("./auth/log-in")
 })
 
@@ -39,7 +39,7 @@ router.post("/sign-up", (req, res, next) => {
         .catch(err => next(err))
 })
 
-router.post("/log-out", (req, res, next) => {
+router.get("/log-out", (req, res, next) => {
     req.session.destroy(() => res.redirect('/log-in'))
 })
 

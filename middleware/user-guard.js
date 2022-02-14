@@ -11,15 +11,15 @@ const setLoggedUser = (req, res, next) => {
             next()
         } else {
             req.app.locals.loggedUser = undefined
-            req.app.locals.roleBEGINNER = false
-            req.app.locals.roleADVACED = false
-            req.app.locals.roleINTERMEDIATE = false
+            req.app.locals.roleBEGINNER = undefined
+            req.app.locals.roleADVANCED = undefined
+            req.app.locals.roleINTERMEDIATE = undefined
             next()
         }
     } else {
-        req.app.locals.roleBEGINNER = false
-        req.app.locals.roleADVACED = false
-        req.app.locals.roleINTERMEDIATE = false
+        req.app.locals.roleBEGINNER = undefined
+        req.app.locals.roleADVANCED = undefined
+        req.app.locals.roleINTERMEDIATE = undefined
         req.app.locals.loggedUser = undefined
         next()
     }

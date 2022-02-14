@@ -40,7 +40,7 @@ body{
 }
 
 .logoutbtn{
-  background-color: transparent;
+  background-color: black;
   border: 0;
 }
 
@@ -52,6 +52,8 @@ body{
   padding-top: 80px;
   height: inherit;
 }
+
+
 
 
 @keyframes dissapear {
