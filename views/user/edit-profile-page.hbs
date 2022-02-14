@@ -1,0 +1,49 @@
+<div class="container">
+
+    <h2>
+        Soy la página de editar
+    </h2>
+
+    <form action="/edit-profile/{{_id}}" method=" 
+    POST">
+
+        <label> email:
+            <input type="email" name="email" value="{{email}}">
+
+        </label>
+
+        <label>
+            Username:
+            <input type="username" name="username" value="{{username}}">
+
+        </label>
+
+
+        <label>
+            Name:
+            <input type="text" name="name" value="{{name}}">
+
+        </label>
+
+        <label>
+            Description
+            <input type="text" name="description" value="{{description}}">
+
+        </label>
+
+        <label>
+            Image:
+            <input type="text" name="image" value="{{image}}">
+
+        </label>
+
+        <label>
+            Password
+            <input type="password" name="password" value="{{password}}">
+        </label>
+
+        <input type="submit" value="Edit Student">
+
+    </form>
+
+</div>
