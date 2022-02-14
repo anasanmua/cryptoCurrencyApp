@@ -8,3 +8,5 @@ const isAdavanced = user => user.role = 'ADVANCED'
 module.exports = {
     isBegginer, isIntermediate, isAdavanced
 }
+
+
