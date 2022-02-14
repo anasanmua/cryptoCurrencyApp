@@ -12,7 +12,7 @@ router.post("/log-in", (req, res, next) => {
         .findOne({ email })
         .then(user => {
             if (!user) {
-
+                res.render('')
             }
         })
     res.send("log-in handler")
