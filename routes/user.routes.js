@@ -8,22 +8,52 @@ const User = require("../models/User.model")
 
 //Requerir bcrypt para encriptar password
 const bcrypt = require('bcrypt')
+const req = require("express/lib/request")
 const saltRounds = 10
 
 
 //Profile page
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
-    console.log(req.session.currentUser)
+
     res.render("user/profile-page", { user: req.session.currentUser })
 })
+
+//Main page
+
+router.get('/main', isLoggedIn, (req, res, next) => {
+    res.render('information/main-page')
+
+})
+
+//News page
+
+router.get('/news', isLoggedIn, (req, res, next) => {
+    res.render('information/news-page')
+
+})
+
+//Tips page
+router.get('/tips-to-invest', isLoggedIn, (req, res, next) => {
+    res.render('information/tips-to-invest-page')
+
+})
+
+//Information page
+router.get('/market-data', isLoggedIn, (req, res, next) => {
+    res.render('information/market-data-page')
+
+})
+
+
 
 //Edit user
 
 //GET
-router.get("/edit-profile/:_id", (req, res, next) => {
+router.get("/edit-profile", isLoggedIn, (req, res, next) => {
 
-    const { _id } = req.params
+    const { _id } = req.session.currentUser
+
 
     User
         .findById(_id)
@@ -32,19 +62,49 @@ router.get("/edit-profile/:_id", (req, res, next) => {
 })
 
 //POST
-router.post('"/edit-profile/:_id"', (req, res, next) => {
-    const { _id } = req.params
+router.post("/edit-profile", (req, res, next) => {
+
+    const { _id } = req.session.currentUser
 
     const { email, username, name, description, image, password } = req.body
 
     User
-        .findByIdAndUpdate(_id, { email, username, name, description, image, password })
-        .then(() => res.redirect('/'))
+        .findByIdAndUpdate(_id, { email, username, name, description, image, password }, { new: true })
+        .then((user) => {
+            req.session.currentUser = user
+            res.redirect('/profile')
+        })
         .catch(err => console.log(err))
 
+
+
 })
+
+router.post("/edit-profile", (req, res, next) => {
+
+    const { password } = req.body
+
+    bcrypt
+        .genSalt(saltRounds)
+        .then(salt => bcrypt.hash(password, salt))
+        .then(pwdHash => User.findByIdAndUpdate({ ...req.body, password: pwdHash }))
+        .then((user) => {
+            req.session.currentUser = user
+            res.redirect('/profile')
+        })
+        .catch(err => next(err))
+})
+
+
+//Explicación de cómo conseguir usuario actualizado: , el método findByIdAndUpdate devuelve el user antigüo, no el actualizado, cuando hacemos { new:true }, cambiamos esta condición para que nos devuelva el núevo usuario. 
+//Una vez tenemos el nuevo usuario 
+//.then((user) => {
+//     req.session.currentUser = user <-- Actualizamos el currentuser a user updated!
+// })
+// Con esto conseguimos que el perfil se actualice
 
 
 
 
 module.exports = router
+

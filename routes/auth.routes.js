@@ -40,7 +40,7 @@ router.post("/sign-up", (req, res, next) => {
 })
 
 router.post("/log-out", (req, res, next) => {
-    req.session.destroy(() => res.redirect('/iniciar-sesion'))
+    req.session.destroy(() => res.redirect('/log-in'))
 })
 
 module.exports = router

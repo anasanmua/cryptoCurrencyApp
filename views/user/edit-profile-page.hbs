@@ -2,7 +2,10 @@
     <h2>Editar perfil</h2>
     <div class="row">
         <div class="col-6">
-            <form action="/edit-profile/{{_id}}" method="POST">
+
+            {{#with loggedUser}}
+
+            <form action="/edit-profile" method="POST">
 
                 <label for="email">Email
                     <input type="email" name="email" value="{{email}}" class="form-control">
@@ -27,7 +30,9 @@
                 <label for="password">Password
                     <input type="password" name="password" value="{{password}}" class="form-control">
                 </label>
-                <button class="btn btn-primary">Sign-up</button>
+                {{/with}}
+
+                <button class="btn btn-primary">Edit profile</button>
             </form>
         </div>
     </div>
