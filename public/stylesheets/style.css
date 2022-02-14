@@ -12,7 +12,6 @@ body{
   width: 100%;
 }
 .pagecontainer{
-  padding-top:70px;
   height:100%;
 }
 .nav-link{
@@ -47,6 +46,11 @@ body{
 
 .contactList{
   list-style: none;
+}
+
+.margintop{
+  padding-top: 80px;
+  height: inherit;
 }
 
 
