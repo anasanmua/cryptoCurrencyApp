@@ -1,12 +1,23 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-a {
-  color: #00b7ff;
+body{
+  height: 100vh;
+}
+.pagecontainer{
+  padding-top:20px;
+  height: 100vh;
+}
+.nav-link{
+  margin-left: 15px;
 }
 
-h1 {
-  color: 15px;
+.home{
+  margin-left: 0;
+}
+
+.authforms{
+  height: 91.8vh
 }
