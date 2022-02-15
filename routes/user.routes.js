@@ -63,12 +63,14 @@ router.get("/edit-profile", isLoggedIn, (req, res, next) => {
 //POST
 router.post("/edit-profile", (req, res, next) => {
 
+    const { _id } = req.session.currentUser
     const { password } = req.body
+    console.log(req.session.currentUser)
 
     bcrypt
         .genSalt(saltRounds)
         .then(salt => bcrypt.hash(password, salt))
-        .then(pwdHash => User.findByIdAndUpdate({ ...req.body, password: pwdHash }))
+        .then(pwdHash => User.findByIdAndUpdate(_id, { ...req.body, password: pwdHash }))
         .then((user) => {
             req.session.currentUser = user
             res.redirect('/profile')
@@ -107,7 +109,13 @@ router.post('/knowledge-form', (req, res, next) => {
     console.log(req.session.currentUser)
     console.log(req.body)
 
-    if (question1 === 'yes' && question2 === 'yes') {
+    if (question1 === 'yes' && question2 === 'yes' && question3 === 'no' && question4 === 'no' || question1 === 'yes' && question2 === 'yes' && question3 === 'yes' && question4 === 'no') {
+        User
+            .findByIdAndUpdate(_id, { role: 'INTERMEDIATE' })
+            .then(() => res.redirect('/profile'))
+            .catch(err => console.log(err))
+
+    } else if (question1 === 'yes' && question2 === 'yes' && question3 === 'no' && question4 === 'yes') {
         User
             .findByIdAndUpdate(_id, { role: 'ADVANCED' })
             .then(() => res.redirect('/profile'))

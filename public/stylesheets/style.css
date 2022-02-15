@@ -117,6 +117,72 @@ padding-left: 20px;
   list-style-position: inherit;
 }
 
+/* Log in */
+
+
+.display-flex{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.login-box {
+  
+  width: 50%;
+  height: 350px;
+  padding: 40px;
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box label {
+  width: 100%;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+}
+.login-box input:focus {
+   box-shadow: 0 0 0 0rem;
+}
+
+.login-box button {
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  letter-spacing: 4px;
+  background-color: transparent;
+  border: none;
+}
+
+.login-box button:focus{
+ background-color: transparent;
+}
+
+.login-box button:hover{
+ background-color: transparent;
+}
+
+
 
 @keyframes dissapear {
   0% {
