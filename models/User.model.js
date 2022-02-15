@@ -27,6 +27,11 @@ const userSchema = new Schema(
 
     },
 
+    firstTimeLoggedIn: {
+      type: Boolean,
+      default: true
+    },
+
     favCryptoCurrency: [String],
   },
   {

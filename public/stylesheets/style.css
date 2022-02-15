@@ -53,6 +53,15 @@ body{
   height: inherit;
 }
 
+fieldset {
+  margin: 10px;
+}
+
+legend{
+  padding-left: 0px !important; 
+  
+}
+
 
 
 
