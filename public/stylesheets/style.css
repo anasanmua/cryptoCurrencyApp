@@ -56,8 +56,19 @@ nav{
 
 .margintop > :first-child{
   color: white;
-
 }
+
+
+fieldset {
+  margin: 10px;
+}
+
+legend{
+  padding-left: 0px !important; 
+  
+}
+
+
 
 .main{
   padding-top: 10px;

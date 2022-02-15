@@ -1,5 +1,6 @@
 const User = require("../models/User.model")
 const bcrypt = require('bcrypt')
+// const { firstTimeLog } = require("../middleware/user-guard")
 const saltRounds = 10
 
 const router = require("express").Router()
@@ -11,6 +12,7 @@ router.get("/log-in", (req, res, next) => {
 
 router.post("/log-in", (req, res, next) => {
     const { email, password } = req.body
+
     User
         .findOne({ email })
         .then(user => {
@@ -19,8 +21,20 @@ router.post("/log-in", (req, res, next) => {
             } else if (bcrypt.compareSync(password, user.password) === false) {
                 res.render('./auth/log-in', { errorMessage: "Contraseña incorrecta." })
             } else {
+
                 req.session.currentUser = user
-                res.redirect('/profile')
+                if (req.session.currentUser.firstTimeLoggedIn === true) {
+
+                    const { _id } = req.session.currentUser
+                    User
+                        .findByIdAndUpdate(_id, { firstTimeLoggedIn: false })
+                        .then(() => next())
+                        .catch(err => next(err))
+
+                    res.redirect('/knowledge-form')
+                } else {
+                    res.redirect('/profile')
+                }
             }
         })
 })
@@ -35,8 +49,8 @@ router.post("/sign-up", (req, res, next) => {
         .genSalt(saltRounds)
         .then(salt => bcrypt.hash(password, salt))
         .then(pwdHash => User.create({ ...req.body, password: pwdHash }))
-        .then(() => res.render("./auth/log-in", { infoMessage: "You can now log in" }))
-        .catch(err => next(err))
+        .then(() => res.redirect("/log-in"))
+
 })
 
 router.get("/log-out", (req, res, next) => {

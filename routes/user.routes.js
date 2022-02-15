@@ -15,7 +15,6 @@ const saltRounds = 10
 //Profile page
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
-    console.log(req.app.locals, '-----------', req.session.currentUser)
     res.render("user/profile-page", { user: req.session.currentUser })
 })
 
@@ -64,24 +63,6 @@ router.get("/edit-profile", isLoggedIn, (req, res, next) => {
 //POST
 router.post("/edit-profile", (req, res, next) => {
 
-    const { _id } = req.session.currentUser
-
-    const { email, username, name, description, image, password } = req.body
-
-    User
-        .findByIdAndUpdate(_id, { email, username, name, description, image, password }, { new: true })
-        .then((user) => {
-            req.session.currentUser = user
-            res.redirect('/profile')
-        })
-        .catch(err => console.log(err))
-
-
-
-})
-
-router.post("/edit-profile", (req, res, next) => {
-
     const { password } = req.body
 
     bcrypt
@@ -95,9 +76,8 @@ router.post("/edit-profile", (req, res, next) => {
         .catch(err => next(err))
 })
 
-
-//Explicación de cómo conseguir usuario actualizado: , el método findByIdAndUpdate devuelve el user antigüo, no el actualizado, cuando hacemos { new:true }, cambiamos esta condición para que nos devuelva el núevo usuario. 
-//Una vez tenemos el nuevo usuario 
+//Explicación de cómo conseguir usuario actualizado: , el método findByIdAndUpdate devuelve el user antigüo, no el actualizado, cuando hacemos { new:true }, cambiamos esta condición para que nos devuelva el núevo usuario.
+//Una vez tenemos el nuevo usuario
 //.then((user) => {
 //     req.session.currentUser = user <-- Actualizamos el currentuser a user updated!
 // })
@@ -106,6 +86,42 @@ router.post("/edit-profile", (req, res, next) => {
 router.get("/knowledge/crypto", (req, res, next) => {
     res.render('./information/knowledge/crypto')
 })
+//Role form
+
+//GET
+router.get('/knowledge-form', isLoggedIn, (req, res, next) => {
+    res.render('auth/role-form-page')
+
+})
+
+//POST 
+router.post('/knowledge-form', (req, res, next) => {
+
+    const { _id } = req.session.currentUser
+    console.log(_id)
+
+    const { question1, question2, question3, question4 } = req.body
+
+    const { role } = req.session.currentUser
+
+    console.log(req.session.currentUser)
+    console.log(req.body)
+
+    if (question1 === 'yes' && question2 === 'yes') {
+        User
+            .findByIdAndUpdate(_id, { role: 'ADVANCED' })
+            .then(() => res.redirect('/profile'))
+            .catch(err => console.log(err))
+
+    } else {
+        console.log('maripili')
+    }
+
+
+})
+
+
+
 
 router.get("/knowledge/blockchain", (req, res, next) => {
     res.render('./information/knowledge/blockchain')
