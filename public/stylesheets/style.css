@@ -7,7 +7,7 @@
 nav{
   position: absolute;
   width: 100%;
-  height: 60px;
+  min-height: 60px;
   border-bottom: 1px solid white;
 }
 .pagecontainer{
@@ -48,7 +48,7 @@ nav{
 }
 
 .margintop{
-  height: 110vh;
+  min-height: 110vh;
   padding-top: 60px;
   width: 100%;
   background: linear-gradient(#141e30, #243b55);
@@ -81,6 +81,8 @@ legend{
 
 .knowledgearticles{
   border: 2px solid #8dc0ff;
+  padding: 80px 30px;
+  margin-bottom: 60px;
 }
 .knowledgearticles h2{
   text-align: center;
@@ -117,6 +119,34 @@ padding-left: 20px;
   list-style-position: inherit;
 }
 
+.profilecard{
+  color: white;
+  padding: 30px;
+  background-color: rgba(255,255,255,0.08);
+  width: 80%;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  height: 80vh;
+}
+.profilecard img{
+  border-radius: 50%;
+  width: 100%;
+}
+
+.profilecard h5{
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.cardbtn{
+  margin-top: 20px;
+
+}
+
+.carddesc{
+  text-align: center;
+  margin-left: 30px;
+}
 
 @keyframes dissapear {
   0% {

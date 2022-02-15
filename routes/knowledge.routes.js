@@ -1,3 +1,4 @@
+
 const User = require("../models/User.model")
 const router = require("express").Router()
 
@@ -11,9 +12,9 @@ router.get("/knowledge/blockchain", (req, res, next) => {
 
 
 router.get('/news', (req, res, next) => {
-
-    axios.get()
-
+    compareAPI
+        .getFullListNews()
+        .then(ListOfNews => console.log(ListOfNews))
 })
 
 module.exports = router

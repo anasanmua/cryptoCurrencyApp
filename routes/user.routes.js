@@ -56,19 +56,20 @@ router.get("/edit-profile", isLoggedIn, (req, res, next) => {
 
     User
         .findById(_id)
-        .then(users => res.render('user/edit-profile-page'))
+        .then(user => res.render('user/edit-profile-page'))
         .catch(err => console.log(err))
 })
 
 //POST
 router.post("/edit-profile", (req, res, next) => {
 
+    const { _id } = req.session.currentUser
     const { password } = req.body
 
     bcrypt
         .genSalt(saltRounds)
         .then(salt => bcrypt.hash(password, salt))
-        .then(pwdHash => User.findByIdAndUpdate({ ...req.body, password: pwdHash }))
+        .then(pwdHash => User.findByIdAndUpdate(_id, { ...req.body, password: pwdHash }, { new: true }))
         .then((user) => {
             req.session.currentUser = user
             res.redirect('/profile')

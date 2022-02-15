@@ -6,7 +6,6 @@ const saltRounds = 10
 const router = require("express").Router()
 
 router.get("/log-in", (req, res, next) => {
-    console.log(req.app.locals)
     res.render("./auth/log-in")
 })
 
@@ -21,7 +20,6 @@ router.post("/log-in", (req, res, next) => {
             } else if (bcrypt.compareSync(password, user.password) === false) {
                 res.render('./auth/log-in', { errorMessage: "Contraseña incorrecta." })
             } else {
-
                 req.session.currentUser = user
                 if (req.session.currentUser.firstTimeLoggedIn === true) {
 

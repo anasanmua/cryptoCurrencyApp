@@ -1,3 +1,4 @@
+
 class APIHandler {
     constructor(baseUrl) {
         this.axiosApp = axios.create({
@@ -11,17 +12,18 @@ class APIHandler {
     getOneCrypto() {
     }
 
-    getFullList() {
+    getFullCryptoList() {
     }
 
-    renderList() {
+    renderCryptoList() {
     }
 
     getFullListNews() {
-
+        console.log('estoy pasando por list news')
+        return this.axiosApp.get('v2/news/?lang=EN')
     }
 
-    getOneNew() {
+    getOneNews() {
     }
 
     compareTwoCryptos(fst, sec) {

@@ -57,7 +57,6 @@ function checkRole() {
                     </label>
                 </div>`
     } else {
-        console.log('pepito')
         thirdQuestion.innerHTML = ` <div class="form-check ">
                     <input class="form-check-input " type="radio" name="question3" id="gridRadios1" value="option1"
                         disabled>
