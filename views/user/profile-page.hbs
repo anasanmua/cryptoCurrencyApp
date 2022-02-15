@@ -1,17 +1,18 @@
-<h2>hola</h2>
-<div class="container main">
+<h2></h2>
+<div class="container main d-flex justify-content-center">
 
     {{#with loggedUser}}
 
-    <div class="card" style="width: 18rem;">
-        <img src="{{image}}" class="card-img-top" alt="...">
-        <div class="card-body">
+    <div class="profilecard card row d-flex flex-row">
+        <div class="col-2">
+            <img src="{{image}}" class="card-img-top" alt="...">
+            <a href="/edit-profile" class="btn btn-primary cardbtn">Edit profile</a>
+        </div>
+        <div class="card-body col-6 carddesc">
             <h5 class="card-title">{{name}}</h5>
-            <p class="card-text">{{description}}
-                content.</p>
-            <a href="/edit-profile" class="btn btn-primary">Edit profile</a>
-            <p class="card-text">{{role}}
-            </p>
+            <p class="card-text">{{description}}</p>
+
+            <p class="card-text">{{role}}</p>
         </div>
     </div>
 
