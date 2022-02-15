@@ -103,7 +103,13 @@ router.post("/edit-profile", (req, res, next) => {
 // })
 // Con esto conseguimos que el perfil se actualice
 
+router.get("/knowledge/crypto", (req, res, next) => {
+    res.render('./information/knowledge/crypto')
+})
 
+router.get("/knowledge/blockchain", (req, res, next) => {
+    res.render('./information/knowledge/blockchain')
+})
 
 
 module.exports = router
