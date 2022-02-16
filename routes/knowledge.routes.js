@@ -10,7 +10,6 @@ const User = require("../models/User.model")
 const newsAPIHandler = require('../api-handlers/news-api')
 
 
-
 //Main page
 
 router.get('/main', isLoggedIn, (req, res, next) => {
@@ -25,22 +24,20 @@ router.get('/news', isLoggedIn, (req, res, next) => {
     compareAPI
         .getFullListNews()
         .then(response => {
-            const noticias = response.data.Data
-            console.log()
-            res.render('information/news-page', { noticias })
+            const newsData = response.data.Data
+            const news = newsData.slice(0, 10)
+            res.render('information/news-page', { news })
         })
         .catch(err => console.log(err))
 
 })
 
-//Tips page
-router.get('/tips-to-invest', isLoggedIn, (req, res, next) => {
-    res.render('information/tips-to-invest-page')
 
-})
 
 //Information page
 router.get('/market-data', isLoggedIn, (req, res, next) => {
+
+
     res.render('information/market-data-page')
 
 })

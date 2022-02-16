@@ -23,9 +23,9 @@ nav{
 
 
 .warnMessage {
-  background-color: red;
-  color: white;
-  font-weight: bold;
+  background-color: black;
+  color: #03e9f4;
+  font-weight: bolder;
   text-align: center;
   margin: 10px;
 }
@@ -47,16 +47,18 @@ nav{
   list-style: none;
 }
 
-.margintop{
-  min-height: 110vh;
-  padding-top: 60px;
+.contactcol{
+  list-style-position:inherit;
+}
+
+.background{
+  color: white;
+  min-height: 90vh;
   width: 100%;
   background: linear-gradient(#141e30, #243b55);
 }
 
-.margintop > :first-child{
-  color: white;
-}
+
 
 
 fieldset {
@@ -68,11 +70,9 @@ legend{
   
 }
 
-
-
 .main{
-  padding-top: 10px;
   width: 100%;
+  height: 100%;
 }
 
 .knowledgequestions ul{
@@ -82,7 +82,8 @@ legend{
 .knowledgearticles{
   border: 2px solid #8dc0ff;
   padding: 80px 30px;
-  margin-bottom: 60px;
+  margin: 60px 0;
+  border-radius: 5px;
 }
 .knowledgearticles h2{
   text-align: center;
@@ -128,7 +129,7 @@ padding-left: 20px;
 }
 
 .login-box {
-  
+
   width: 50%;
   height: 350px;
   padding: 40px;
@@ -151,19 +152,25 @@ padding-left: 20px;
 
 .login-box .user-box input {
   width: 100%;
-  padding: 10px 0;
+  padding: 10px 0 10px 10px;
   font-size: 16px;
-  color: #fff;
+  color: #03e9f4;
   margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid #fff;
   background: transparent;
+  font-weight: 500;
+  
 }
 .login-box input:focus {
    box-shadow: 0 0 0 0rem;
 }
 
 .login-box button {
+  margin-bottom: 10px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px 20px;
   color: #03e9f4;
   font-size: 16px;
@@ -182,6 +189,7 @@ padding-left: 20px;
 
 .login-box button:hover{
  background-color: transparent;
+ border: 1px solid #03e8f470;
 }
 
 
@@ -195,8 +203,8 @@ padding-left: 20px;
   height: 80vh;
 }
 .profilecard img{
-  border-radius: 50%;
   width: 100%;
+  border-radius: 50%
 }
 
 .profilecard h5{
@@ -212,27 +220,117 @@ padding-left: 20px;
 .carddesc{
   text-align: center;
   margin-left: 30px;
+  margin-bottom: 50px;
 }
+.cryptocard{
+  border:1px solid black;
+  border-radius: 10px;
+  height:50px;
+
+}
+
+.news-card{
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 450px;
+  margin: 30px 10px;
+  box-shadow: 1px 1px 8px rgba(255,255,255,.5);
+  justify-content: center;
+}
+
+.news-card-body{
+  text-align: center;
+}
+.news-card-body a{
+  justify-content: center;
+  color: #01c7d1;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.news-card-body a:hover{
+
+  color: #06f3ff;
+
+}
+
+.tipCard{
+  width: 50%;
+}
+
+.news-card img{
+width: 100%;
+}
+
+.cryptoview{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border:1px solid gray;
+  border-radius: 10px;
+  height: 50px;
+}
+.newsbtns{
+  padding-bottom: 30px;
+  flex-wrap:wrap;
+  width: 500px;
+}
+.submit-tip{
+  margin-top: 20px;
+}
+
+.create-tip-form input{
+  margin-bottom:20px;
+}
+
+.tipform{
+  width: 80%;
+  height: 100%;
+}
+
 
 @keyframes dissapear {
   0% {
-    transform: rotateX(90deg);
+    opacity: 0;
   }
 
-  50% {
+  25% {
     opacity: 1;
-    transform: rotateX(0deg);
   }
+  
+  50%{
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
 
+  }
   100% {
     display: none;
     opacity: 0;
-    transform: rotateX(90deg);
+
   }
 }
 
 #warnMessage, #infoMessage {
   animation-name: dissapear;
-  animation-duration: 2500ms;
+  animation-duration: 4500ms;
   animation-fill-mode: forwards;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid #03e9f4;
+  -webkit-text-fill-color: #03e9f4;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+  
 }

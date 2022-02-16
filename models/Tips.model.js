@@ -17,7 +17,6 @@ const tipSchema = new Schema(
 
         }
 
-
     },
     {
 

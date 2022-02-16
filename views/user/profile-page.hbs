@@ -8,11 +8,22 @@
             <img src="{{image}}" class="card-img-top" alt="...">
             <a href="/edit-profile" class="btn btn-primary cardbtn">Edit profile</a>
         </div>
-        <div class="card-body col-6 carddesc">
-            <h5 class="card-title">{{name}}</h5>
+        <div class="card-body col-6 carddesc align-items-center flex-column justify-content-center">
+            <div class="d-flex justify-content-around">
+                <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{role}}</p>
+            </div>
+            <hr>
             <p class="card-text">{{description}}</p>
-
-            <p class="card-text">{{role}}</p>
+        </div>
+        <div class="row d-flex flex-row">
+            <hr>
+            <div class="col cryptocard d-flex justify-content-center align-items-center">
+                <div class="cryptoname d-flex align-items-center">
+                    <p>soy una cripto</p>
+                </div>
+                <button class="btn btn-outline-danger">X</button>
+            </div>
         </div>
     </div>
 

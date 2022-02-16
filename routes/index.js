@@ -13,5 +13,7 @@ module.exports = app => {
   app.use('/', require("./user.routes"))
 
   app.use('/', require("./knowledge.routes"))
+
+  app.use('/tips-to-invest', require("./tips.routes"))
 }
 

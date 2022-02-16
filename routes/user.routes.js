@@ -1,5 +1,6 @@
 
 const User = require("../models/User.model")
+const { isLoggedIn } = require('../middleware/route-guard')
 const router = require("express").Router()
 const bcrypt = require('bcrypt')
 const saltRounds = 10

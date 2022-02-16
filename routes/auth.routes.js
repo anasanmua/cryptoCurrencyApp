@@ -1,6 +1,5 @@
 const User = require("../models/User.model")
 const bcrypt = require('bcrypt')
-// const { firstTimeLog } = require("../middleware/user-guard")
 const saltRounds = 10
 
 const router = require("express").Router()
