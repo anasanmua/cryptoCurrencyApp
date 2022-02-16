@@ -192,6 +192,10 @@ padding-left: 20px;
  border: 1px solid #03e8f470;
 }
 
+/* Market Data */
+.marketData{
+  color: #fff;
+}
 
 .profilecard{
   color: white;
@@ -289,6 +293,10 @@ width: 100%;
   height: 100%;
 }
 
+
+.display-none{
+  display: none;
+}
 
 @keyframes dissapear {
   0% {
