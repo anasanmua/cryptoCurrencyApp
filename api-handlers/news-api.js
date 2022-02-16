@@ -1,3 +1,4 @@
+const axios = require('axios')
 
 class APIHandler {
     constructor(baseUrl) {
@@ -7,15 +8,6 @@ class APIHandler {
     }
 
     renderList() {
-    }
-
-    getOneCrypto() {
-    }
-
-    getFullCryptoList() {
-    }
-
-    renderCryptoList() {
     }
 
     getFullListNews() {
@@ -29,3 +21,5 @@ class APIHandler {
     compareTwoCryptos(fst, sec) {
     }
 }
+
+module.exports = APIHandler 

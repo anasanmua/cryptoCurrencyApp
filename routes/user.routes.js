@@ -8,9 +8,9 @@ const User = require("../models/User.model")
 
 //Requerir bcrypt para encriptar password
 const bcrypt = require('bcrypt')
-const req = require("express/lib/request")
 const saltRounds = 10
 
+const newsAPIHandler = require('../api-handlers/news-api')
 
 //Profile page
 
@@ -28,7 +28,15 @@ router.get('/main', isLoggedIn, (req, res, next) => {
 //News page
 
 router.get('/news', isLoggedIn, (req, res, next) => {
-    res.render('information/news-page')
+    const compareAPI = new newsAPIHandler('https://min-api.cryptocompare.com/data/')
+    compareAPI
+        .getFullListNews()
+        .then(response => {
+            const noticias = response.data.Data
+            console.log()
+            res.render('information/news-page', { noticias })
+        })
+        .catch(err => console.log(err))
 
 })
 
@@ -65,16 +73,11 @@ router.post("/edit-profile", (req, res, next) => {
 
     const { _id } = req.session.currentUser
     const { password } = req.body
-    console.log(req.session.currentUser)
 
     bcrypt
         .genSalt(saltRounds)
         .then(salt => bcrypt.hash(password, salt))
-<<<<<<< HEAD
-        .then(pwdHash => User.findByIdAndUpdate(_id, { ...req.body, password: pwdHash }))
-=======
         .then(pwdHash => User.findByIdAndUpdate(_id, { ...req.body, password: pwdHash }, { new: true }))
->>>>>>> jean
         .then((user) => {
             req.session.currentUser = user
             res.redirect('/profile')
@@ -104,14 +107,11 @@ router.get('/knowledge-form', isLoggedIn, (req, res, next) => {
 router.post('/knowledge-form', (req, res, next) => {
 
     const { _id } = req.session.currentUser
-    console.log(_id)
 
     const { question1, question2, question3, question4 } = req.body
 
     const { role } = req.session.currentUser
 
-    console.log(req.session.currentUser)
-    console.log(req.body)
 
     if (question1 === 'yes' && question2 === 'yes' && question3 === 'no' && question4 === 'no' || question1 === 'yes' && question2 === 'yes' && question3 === 'yes' && question4 === 'no') {
         User

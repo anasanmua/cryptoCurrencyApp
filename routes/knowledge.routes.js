@@ -11,10 +11,6 @@ router.get("/knowledge/blockchain", (req, res, next) => {
 })
 
 
-router.get('/news', (req, res, next) => {
-    compareAPI
-        .getFullListNews()
-        .then(ListOfNews => console.log(ListOfNews))
-})
+
 
 module.exports = router
