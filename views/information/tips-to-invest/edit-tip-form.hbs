@@ -2,20 +2,20 @@
     <div class="row justify-content-center">
         <div class="col-9 d-flex justify-content-center">
             <div class="login-box tipform">
-                <form action="/tips-to-invest/create" method="POST"
+                <form action="/tips-to-invest/{{_id}}/edit" method="POST"
                     class="d-flex flex-column text-center create-tip-form">
                     <div class="user-box">
                         <label for="title">Title
-                            <input type="text" name="title" class="form-control">
+                            <input type="text" name="title" class="form-control" value="{{title}}">
                         </label>
                         <label for="description">Description
-                            <input type="text" name="description" class="form-control">
+                            <input type="text" name="description" class="form-control" value="{{description}}">
                         </label>
                         {{#if descriptionMessage}}<div class="descriptionMessage">{{descriptionMessage}}</div>{{/if}}
                         <label for="image">Image
-                            <input type="text" name="image" class="form-control">
+                            <input type="text" name="image" class="form-control" value="{{image}}">
                         </label>
-                        <button class="btn btn-primary submit-tip">Submit tip</button>
+                        <button class="btn btn-primary submit-tip">Edit tip</button>
                     </div>
                 </form>
             </div>

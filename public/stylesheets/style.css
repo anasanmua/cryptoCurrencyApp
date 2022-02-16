@@ -10,6 +10,12 @@ nav{
   min-height: 60px;
   border-bottom: 1px solid white;
 }
+
+a{
+  color: #01c7d1;
+  text-decoration: none;
+}
+
 .pagecontainer{
   height:100%;
 }
@@ -55,7 +61,8 @@ nav{
   color: white;
   min-height: 90vh;
   width: 100%;
-  background: linear-gradient(#141e30, #243b55);
+  background: url("https://i.imgur.com/DO7bYCt.png") no-repeat right bottom fixed,linear-gradient(#141e30, #243b55);
+  background-size: 400px, auto;
 }
 
 
@@ -207,9 +214,12 @@ padding-left: 20px;
   height: 80vh;
 }
 .profilecard img{
-  width: 100%;
-  border-radius: 50%
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
 }
+
 
 .profilecard h5{
   font-weight: 700;
@@ -218,6 +228,7 @@ padding-left: 20px;
 
 .cardbtn{
   margin-top: 20px;
+  font-size: 1em;
 
 }
 
@@ -260,7 +271,18 @@ padding-left: 20px;
 }
 
 .tipCard{
-  width: 50%;
+  display:flex ;
+  flex-direction: column;
+  width: 80%;
+  word-wrap:break-word;
+  border: 1px solid #4b79ad;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding:20px;
+}
+
+.tipCard img{
+  width: 25%;
 }
 
 .news-card img{
@@ -296,6 +318,33 @@ width: 100%;
 
 .display-none{
   display: none;
+}
+
+.descriptionMessage{
+  color: rgba(214, 59, 59, 0.774);
+  animation-name: dissapear;
+  animation-duration: 4500ms;
+  animation-fill-mode: forwards;
+}
+
+.tipspage a{
+  margin-top: 20px;
+}
+
+.tipspage button{
+  margin-bottom: 20px;
+  position: absolute;
+  left: 17%;
+}
+
+.btndeletetip{
+  margin-bottom: 10px;
+}
+
+.btnedittip a{
+  position: absolute;
+  right: 15%;
+  transform: translate(-50%, -80%);
 }
 
 @keyframes dissapear {

@@ -41,9 +41,25 @@ const setLoggedUser = (req, res, next) => {
     }
 }
 
+const isAdmin = (req, res, next) => {
+    if (req.session?.currentUser?.username === "ADMIN") {
+        req.app.locals.admin = true
+        next()
+    }
+    if (req.session?.currentUser?.username !== "ADMIN") {
+        req.app.locals.admin = false
+        next()
+    }
+    if (!req.session?.currentUser) {
+        req.app.locals.admin = undefined
+        next()
+    }
+
+}
 
 
 module.exports = {
     setLoggedUser,
+    isAdmin
 
 }

@@ -45,7 +45,7 @@ function displayGraph(url, canvas) {
     }
 
 }
-
+fetch
 displayGraph('https://api.coincap.io/v2/assets/bitcoin/history?interval=d1&start=1642287600000&end=1644966000000', 'chart99')
 
 displayGraph('https://api.coincap.io/v2/assets/ethereum/history?interval=d1&start=1642287600000&end=1644966000000', 'chart98')
