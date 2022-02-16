@@ -9,6 +9,8 @@ const User = require("../models/User.model")
 //Requerir bcrypt para encriptar password
 const newsAPIHandler = require('../api-handlers/news-api')
 
+const marketAPIHandler = require('../api-handlers/market-data')
+
 
 
 //Main page
@@ -42,6 +44,8 @@ router.get('/tips-to-invest', isLoggedIn, (req, res, next) => {
 //Information page
 router.get('/market-data', isLoggedIn, (req, res, next) => {
     res.render('information/market-data-page')
+
+
 
 })
 
