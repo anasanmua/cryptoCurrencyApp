@@ -46,8 +46,9 @@ router.get('/market-data', isLoggedIn, (req, res, next) => {
         .getCryptos()
         .then(elm => {
             const cryptos = elm.data.data
+            // const priceRounded = cryptos.map(el => parseFloat(el.priceUsd).toFixed(2))
             const selectedCryptos = cryptos.slice(0, 20)
-            res.render('information/market-data-page', { selectedCryptos })
+            res.render('information/market-data-page', { selectedCryptos, })
         })
         .catch(err => console.log(err))
 })
