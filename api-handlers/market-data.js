@@ -11,7 +11,6 @@ class APIHandler {
     }
 
     getCryptos() {
-        console.log('getting cryptos')
         return this.axiosApp.get('/assets')
     }
 

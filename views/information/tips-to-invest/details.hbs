@@ -1,0 +1,15 @@
+<div class="detailsTip text-center">
+    <div class="buttonstips">
+        <form action="/tips-to-invest/{{_id}}" method="POST"><button class="btn btn-danger">Delete</button>
+        </form>
+        <a href="/tips-to-invest/{{_id}}/edit"><button class="btn btn-warning">Edit</button></a>
+    </div>
+    <div class="title">
+        {{title}}
+    </div>
+    <hr>
+    <div class="body">
+        <p>{{description}}</p>
+        <img src="{{image}}" alt="">
+    </div>
+</div>

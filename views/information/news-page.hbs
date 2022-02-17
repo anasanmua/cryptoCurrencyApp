@@ -1,10 +1,19 @@
-<div class="container d-flex justify-content-center align-items-center">
-    <button class="btn btn-outline-primary prevnews">
-        << </button>
-            <div class="row justify-content-center">
-                {{#each news}}
-                {{>newsCard}}
-                {{/each}}
-            </div>
-            <button class="btn btn-outline-primary nextnews">>></button>
+<div class="container d-flex justify-content-center align-items-center flex-column newsPageView">
+
+    <h2>LATEST 50 NEWS ABOUT CRYPTO</h2>
+    <div class="skipbtns d-flex align-items-baseline">
+        <button class="btn btn-outline-primary prevnews">
+            << </button>
+                <p class="pageIndex"> 1 </p>
+                <button class="btn btn-outline-primary nextnews"> >> </button>
+    </div>
+    <div class="row justify-content-center newsCardsContainer">
+        {{#each news}}
+        {{>newsCard}}
+        {{/each}}
+    </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./../../js/newsAPIHandler.js"></script>
+<script src="./../../js/news-list.js"></script>

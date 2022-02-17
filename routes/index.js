@@ -8,7 +8,6 @@ module.exports = app => {
 
   app.use('/', require('./auth.routes'))
 
-  //User routes
   app.use('/', require("./user.routes"))
 
   app.use('/', require("./knowledge.routes"))

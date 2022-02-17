@@ -10,11 +10,30 @@ router.use('/', isAdmin)
 
 //Tips page
 router.get('/', (req, res, next) => {
-    console.log(req.app.locals.loggedUser)
     Tip
         .find()
         .populate('owner')
-        .then(tipList => res.render('information/tips-to-invest', { tipList }))
+        .then(tipList => {
+            const tipListModified = tipList.map(tip => {
+                return {
+                    ...tip,
+                    isOwner: req.session.currentUser._id === tip.owner._id.toString()
+                }
+
+            })
+
+            const tipsArray = tipListModified.map(elm => {
+                return {
+                    _id: elm._doc._id,
+                    title: elm._doc.title,
+                    description: elm._doc.description,
+                    image: elm._doc.image,
+                    owner: elm._doc.owner,
+                    isOwner: elm.isOwner
+                }
+            })
+            res.render('information/tips-to-invest', { tipsArray })
+        })
         .catch(err => next(err))
 })
 
@@ -38,12 +57,21 @@ router.post('/create', (req, res, next) => {
 
 })
 
+router.get('/:id/', (req, res, next) => {
+    const { id } = req.params
+    Tip
+        .findById(id)
+        .then(foundTip => res.render('information/tips-to-invest/details', foundTip))
+        .catch(err => next(err))
+
+})
+
 router.post('/:id', (req, res, next) => {
     const { id } = req.params
     Tip
         .findByIdAndDelete(id)
         .then(() => res.redirect('/tips-to-invest'))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 
 })
 
@@ -52,7 +80,7 @@ router.get('/:id/edit', (req, res, next) => {
     Tip
         .findById(id)
         .then(foundTip => res.render('information/tips-to-invest/edit-tip-form', foundTip))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 })
 
 router.post('/:id/edit', (req, res, next) => {
@@ -60,7 +88,7 @@ router.post('/:id/edit', (req, res, next) => {
     Tip
         .findByIdAndUpdate(id, { ...req.body }, { new: true })
         .then(res.redirect('/tips-to-invest'))
-        .catch(err => console.log(err))
+        .catch(err => next(err))
 
 })
 
