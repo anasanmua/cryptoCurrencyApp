@@ -30,8 +30,6 @@ function displayGraph(url, canvas) {
                         marketData.map(elm => (elm.priceUsd))
 
 
-
-
                 }
             ]
         }

@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8e71e0583783ae59613d60e77812edc2b33e3cd2
 
 .home-container{
   background-color:rgb(12 18 25 / 35%);
@@ -27,6 +30,7 @@ h2{
   background-color:rgb(12 18 25 / 35%);
   box-shadow: 1px 1px 8px rgba(255,255,255,.5);
   justify-content: center;
+   background-color:  rgb(12 18 25 / 35%);
 }
 
 .home-card-body{
@@ -48,8 +52,7 @@ h5{
   margin-left: auto;
   margin-right: auto;
   padding: 10px 20px;
-  color: #03e9f4;
-  font-size: 16px;
+    font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
