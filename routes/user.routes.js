@@ -1,6 +1,7 @@
 
 const User = require("../models/User.model")
 const { isLoggedIn } = require('../middleware/route-guard')
+const { profileOwner } = require('./../utils')
 const router = require("express").Router()
 const bcrypt = require('bcrypt')
 const saltRounds = 10
@@ -10,8 +11,18 @@ const saltRounds = 10
 //Profile page
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
-    res.render("user/profile-page", { user: req.session.currentUser })
+    res.render("user/profile-page", { user: req.session.currentUser, profileOwner: true })
 })
+
+router.get("/profile/:username", isLoggedIn, (req, res, next) => {
+    const { username } = req.params
+    const currentUserUsername = req.session.currentUser.username
+    User
+        .findOne({ username })
+        .then(foundUser => res.render("user/profile-page", { user: foundUser, profileOwner: profileOwner(username, currentUserUsername) }))
+        .catch(err => console.log(err))
+})
+
 
 
 // //Edit user

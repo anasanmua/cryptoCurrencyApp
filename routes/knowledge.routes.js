@@ -82,7 +82,10 @@ router.post('/knowledge-form', (req, res, next) => {
             .catch(err => console.log(err))
 
     } else {
-        console.log('maripili')
+        User
+            .findByIdAndUpdate(_id, { role: 'ADVANCED' })
+            .then(() => res.redirect('/profile'))
+            .catch(err => console.log(err))
     }
 
 

@@ -1,12 +1,36 @@
-<div class="contain">
-    <a href="/tips-to-invest/create">
-        <button class="btn btn-outline-primary">Create</button>
-    </a>
+<div class="container d-flex flex-column align-items-center tipspage">
+    <a href="/tips-to-invest/create" class="btn btn-outline-primary"> Create </a>
     {{#each tipList}}
-    <div class="tipCard">
-        <p>{{title}}</p>
-        <p>{{description}}</p>
-        <p>{{image}}</p>
+    <div class="tipCard text-center d-flex">
+        {{!-- delete if owner and if admin --}}
+        {{#if owner}}{{#unless ../admin}}<div class="btndeletetip">
+            <form action="/tips-to-invest/{{_id}}" method="POST">
+                <button class="btn btn-outline-danger">Delete</button>
+            </form>
+        </div>{{/unless}}{{/if}}
+        {{#if ../admin}}<div class="btndeletetip">
+            <form action="/tips-to-invest/{{_id}}" method="POST">
+                <button class="btn btn-outline-danger">Delete</button>
+            </form>
+        </div>{{/if}}
+        {{#if owner}}{{#unless ../admin}}<div class="btnedittip">
+
+            <div><a href="/tips-to-invest/{{_id}}/edit" class="btn btn-outline-warning">Edit</a></div>
+
+        </div>{{/unless}}{{/if}}
+        {{#if ../admin}}<div class="btnedittip">
+
+            <a href="/tips-to-invest/{{_id}}/edit" class="btn btn-outline-warning">Edit</a>
+
+        </div>{{/if}}
+
+
+
+        <h6>Tip by: <a href="/profile/{{owner.username}}">{{owner.name}}</a></h6>
+        <hr>
+        <h5>{{title}}</p>
+            <p>{{description}}</p>
+            <img src="{{image}}" alt="">
     </div>
     {{/each}}
 </div>
