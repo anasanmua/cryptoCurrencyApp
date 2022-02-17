@@ -1,6 +1,8 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Cabin', sans-serif;
+font-family: 'Red Hat Display', sans-serif;
 }
 
 
@@ -29,7 +31,7 @@ a{
 
 
 .warnMessage {
-  background-color: black;
+  background-color: transparent;
   color: #03e9f4;
   font-weight: bolder;
   text-align: center;
@@ -61,8 +63,9 @@ a{
   color: white;
   min-height: 90vh;
   width: 100%;
-  background: url("https://i.imgur.com/DO7bYCt.png") no-repeat right bottom,linear-gradient(#141e30, #243b55);
-  background-size: 400px, auto;
+  background: url("https://i.imgur.com/ybodVf1.png") no-repeat right bottom ,linear-gradient(#141e30, #243b55);
+  background: transparent, auto;
+  background-size: 600px, auto;
 }
 
 
@@ -204,32 +207,22 @@ padding-left: 20px;
   color: #fff;
 }
 
-.profilecard{
-  color: white;
-  padding: 30px;
-  background-color: rgba(255,255,255,0.08);
-  width: 80%;
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-  height: 80vh;
-}
-.profilecard img{
-  border-radius: 50%;
-  object-fit: cover;
-  width: 100px;
-  height: 100px;
+.profileImgCard{
+  border: 2px solid gray;
+  max-width: 30%;
+  height: 200px;
 }
 
-
-.profilecard h5{
-  font-weight: 700;
-  letter-spacing: 1px;
+.profileImgCard img{
+  width:100%
 }
-
 .cardbtn{
   margin-top: 20px;
   font-size: 1em;
 
+}
+.userProfileCard{
+  
 }
 
 .carddesc{
@@ -252,6 +245,8 @@ padding-left: 20px;
   margin: 30px 10px;
   box-shadow: 1px 1px 8px rgba(255,255,255,.5);
   justify-content: center;
+  background-color: rgba(36,59,85,.35);
+  
 }
 
 .news-card-body{
@@ -345,6 +340,46 @@ width: 100%;
   position: absolute;
   right: 15%;
   transform: translate(-50%, -80%);
+}
+
+.pageIndex{
+  margin: 0 20px;
+}
+.newsPageView h2{
+  margin-top: 20px;
+}
+
+.detailsTip{
+  max-width: 80%;
+  position: relative;
+  margin:40px 0; 
+  border: 2px solid #3b618d;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px rgba(255,255,255,.5);
+}
+
+.detailsTip p{
+word-wrap:break-word;
+}
+
+.detailsTip .title{
+  color: #06f3ff;
+  font-weight: 300;
+  font-size: 25px;
+}
+.detailsTip img{
+  width:200px;
+}
+
+.buttonstips{
+  width:96%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+}
+.buttonstips button{
+  position: relative;
 }
 
 @keyframes dissapear {

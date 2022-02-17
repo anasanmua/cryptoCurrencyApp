@@ -1,9 +1,9 @@
 <div class="container d-flex flex-column align-items-center tipspage">
     <a href="/tips-to-invest/create" class="btn btn-outline-primary"> Create </a>
-    {{#each tipList}}
+    {{#each tipsArray}}
     <div class="tipCard text-center d-flex">
         {{!-- delete if owner and if admin --}}
-        {{#if owner}}{{#unless ../admin}}<div class="btndeletetip">
+        {{#if isOwner}}{{#unless ../admin}}<div class="btndeletetip">
             <form action="/tips-to-invest/{{_id}}" method="POST">
                 <button class="btn btn-outline-danger">Delete</button>
             </form>
@@ -13,7 +13,7 @@
                 <button class="btn btn-outline-danger">Delete</button>
             </form>
         </div>{{/if}}
-        {{#if owner}}{{#unless ../admin}}<div class="btnedittip">
+        {{#if isOwner}}{{#unless ../admin}}<div class="btnedittip">
 
             <div><a href="/tips-to-invest/{{_id}}/edit" class="btn btn-outline-warning">Edit</a></div>
 
@@ -24,13 +24,13 @@
 
         </div>{{/if}}
 
-
-
         <h6>Tip by: <a href="/profile/{{owner.username}}">{{owner.name}}</a></h6>
         <hr>
-        <h5>{{title}}</p>
-            <p>{{description}}</p>
-            <img src="{{image}}" alt="">
+        <a href="/tips-to-invest/{{_id}}/">
+            <h5>{{title}}</h5>
+        </a>
+        <p>{{description}}</p>
+        <img src="{{image}}" alt="" class="align-self-center">
     </div>
     {{/each}}
 </div>
