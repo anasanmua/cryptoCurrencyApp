@@ -20,13 +20,13 @@
 </head>
 
 <body>
-   <nav class="navbar navbar-dark bg-dark">
+   <nav class="navbar navbar-dark" style="background-color: #141e30;">
       <div class="container-fluid">
          <a class="navbar-brand" href="/">CryptoApp</a>
          <ul class="navbar-nav flex-row">
-            <li class="nav-item">
-               <a class="nav-link home" href="/main">Home</a>
-            </li>
+            {{#if loggedUser}} <li class="nav-item">
+               <a class="nav-link home" href="/main">Main</a>
+            </li> {{/if}}
             {{#unless loggedUser}}
             <li class="nav-item">
                <a class="nav-link authbtn" href="/log-in">Log-In</a>
@@ -81,32 +81,19 @@
 
    <footer>
       <div class="row footerrow justify-content-center">
-         <div class="row justify-content-center">
+         <div class="row justify-content-center align-items-center d-flex flex-column">
+            <div class="col-4 title text-center">
+               <span>CryptoApp @ Ana Sánchez x Jean Carlo N</span>
+            </div>
             <div class="col-4 socials text-center">
-               <ul>
+               <ul class="d-flex flex-column">
                   Our Githubs
                   <li>
-                     <a href="https://github.com/anasanmua">Ana</a>
-                  </li>
-                  <li>
-                     <a href="https://github.com/VmMad">Jean</a>
+                     <a href="https://github.com/anasanmua">Ana </a> <br>
+                     <a href="https://github.com/VmMad"> Jean</a>
                   </li>
                </ul>
             </div>
-            <div class="col-4 socials text-center">
-               <ul>
-                  otras cositas por aqui...
-                  <li>
-                     a
-                  </li>
-                  <li>
-                     a
-                  </li>
-               </ul>
-            </div>
-         </div>
-         <div class="col-4 title text-center">
-            <span>CryptoApp @ Ana Sánchez x Jean Carlo N</span>
          </div>
       </div>
    </footer>

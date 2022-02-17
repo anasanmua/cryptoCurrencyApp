@@ -1,10 +1,8 @@
-.home-display-flex{
 
-}
 
 
 .home-container{
-  
+  background-color:rgb(12 18 25 / 35%);
 border: 1px solid gray;
   border-radius: 10px;
   padding: 20px;
@@ -21,12 +19,12 @@ h2{
 }
 .home-card{
     height: 100%;
-  border: 1px solid gray;
+   border: 2px solid #8dc0ff;
   border-radius: 10px;
   margin: 10px;
   padding: 20px;
   max-height: 350px;
-  background-color: transparent;
+  background-color:rgb(12 18 25 / 35%);
   box-shadow: 1px 1px 8px rgba(255,255,255,.5);
   justify-content: center;
 }

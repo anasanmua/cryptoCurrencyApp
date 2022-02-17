@@ -1,5 +1,27 @@
-<div class="userProfileCard">
+<div class="userProfileCard d-flex align-center">
     {{#with user}}
-    <div class="profileImgCard"><img src="{{image}}" alt=""></div>
+    <div class="profileImgCard d-grid align-center flex-column text-center cardshared">
+        <img src="{{image}}" alt="" class="align-self-center">
+        <br>
+        <h5>{{username}}</h5>
+        <hr>
+        <p>Knowledge: {{role}}</p>
+    </div>
+    <div class="cardsprofilecontainer d-flex align-items-center justify-content-center text-center flex-column">
+
+        <p>Description: <br> {{description}}</p>
+        {{#if ../profileOwner}}
+        <hr>
+        <div class="profilebtns">
+            <a href="/edit-profile"><button class="btn btn-outline-warning">Edit</button></a>
+            <a href="/log-out"><button class="btn btn-outline-primary">Logout</button></a>
+        </div>
+        {{/if}}
+        {{#if ../admin}}
+        <hr>
+        <a href="/profile/{{_id}}/edit"><button class="btn btn-ourline-warning">Edit</button></a>
+        {{/if}}
+
+    </div>
     {{/with}}
 </div>

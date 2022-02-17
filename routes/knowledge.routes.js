@@ -97,6 +97,11 @@ router.get("/knowledge/crypto", (req, res, next) => {
     res.render('./information/knowledge/crypto')
 })
 
+router.get("/knowledge/Risks", (req, res, next) => {
+    res.render('./information/knowledge/risks')
+})
 
-
+router.get("/knowledge/wallet", (req, res, next) => {
+    res.render('./information/knowledge/wallet')
+})
 module.exports = router

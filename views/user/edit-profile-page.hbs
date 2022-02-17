@@ -1,37 +1,52 @@
 <div class="container authforms pagecontainer">
     <h2>Editar perfil</h2>
-    <div class="row">
-        <div class="col-6">
+    <div class="row display-flex">
 
-            {{#with loggedUser}}
+        {{#with loggedUser}}
+        <div class="login-box editprofile">
+            <form class='login-form' action="/edit-profile" method="POST">
+                <div class="user-box">
+                    <label for="email">Email
+                        <input type="email" name="email" value="{{email}}" class="form-control">
+                    </label>
+                </div>
+                <div class="user-box">
+                    <label for="username">Username
+                        <input type="username" name="username" value="{{username}}" class="form-control">
+                    </label>
 
-            <form action="/edit-profile" method="POST">
+                </div>
 
-                <label for="email">Email
-                    <input type="email" name="email" value="{{email}}" class="form-control">
-                </label>
+                <div class="user-box">
+                    <label for="name">Name
+                        <input type="text" name="name" value="{{name}}" class="form-control">
+                    </label>
 
-                <label for="username">Username
-                    <input type="username" name="username" value="{{username}}" class="form-control">
-                </label>
+                </div>
 
-                <label for="name">Name
-                    <input type="text" name="name" value="{{name}}" class="form-control">
-                </label>
+                <div class="user-box">
+                    <label for="description">Description
+                        <input type="text" name="description" value="{{description}}" class="form-control">
+                    </label>
 
-                <label for="description">Description
-                    <input type="text" name="description" value="{{description}}" class="form-control">
-                </label>
+                </div>
 
-                <label for="image">Image URL
-                    <input type="text" name="image" value="{{image}}" class="form-control">
-                </label>
+                <div class="user-box">
+                    <label for="image">Image URL
+                        <input type="text" name="image" value="{{image}}" class="form-control">
+                    </label>
 
-                <label for="password">Password
-                    <input type="password" name="password" class="form-control">
-                </label>
+                </div>
+
+                <div class="user-box">
+                    <label for="password">Password
+                        <input type="password" name="password" class="form-control">
+                    </label>
+
+                </div>
+
+
                 {{/with}}
-
                 <button class="btn btn-primary">Edit profile</button>
             </form>
         </div>

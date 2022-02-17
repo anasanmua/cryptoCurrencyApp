@@ -114,8 +114,8 @@ footer {
   padding: 0;
   width: 100%;
   border-top: 2px solid #2f4a69;
-  background: linear-gradient(#141e30, #243b55);
-  height: 200px;
+  background: linear-gradient(#293d63,#233454);
+  height: 150px;
 }
 .title span{
 padding-left: 20px;
@@ -141,15 +141,7 @@ padding-left: 20px;
   color: #fff;
 }
 
-.profileImgCard{
-  border: 2px solid gray;
-  max-width: 30%;
-  height: 200px;
-}
 
-.profileImgCard img{
-  width:100%
-}
 .cardbtn{
   margin-top: 20px;
   font-size: 1em;
@@ -163,26 +155,28 @@ padding-left: 20px;
   margin-bottom: 50px;
 }
 .cryptocard{
-  border:1px solid black;
+   border: 2px solid #8dc0ff;
   border-radius: 10px;
   height:50px;
 
 }
 
 .news-card{
-  border: 1px solid gray;
+   border: 2px solid #8dc0ff;
   border-radius: 10px;
   padding: 20px;
   max-height: 450px;
   margin: 30px 10px;
   box-shadow: 1px 1px 8px rgba(255,255,255,.5);
   justify-content: center;
-  background-color: rgba(36,59,85,.35);
+  background-color: rgb(12 18 25 / 35%);
   
 }
 
 
 .tipCard{
+  box-shadow: 1px 1px 8px rgba(255,255,255,.5);
+  position: relative;
   display:flex ;
   flex-direction: column;
   width: 80%;
@@ -191,10 +185,86 @@ padding-left: 20px;
   border-radius: 10px;
   margin: 20px 0;
   padding:20px;
+  background-color: rgb(12 18 25 / 35%);
 }
 
 .tipCard img{
   width: 25%;
+}
+
+.userProfileCard{
+  box-shadow: 1px 1px 8px rgba(255,255,255,.5);
+  align-items: center;
+  border: 2px solid #8dc0ff;
+  border-radius: 10px;
+  min-width: 80vw;
+  height: 70vh;
+  padding: 30px;
+  background-color: rgb(12 18 25 / 35%);
+}
+
+.profileImgCard{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+   border: 2px solid #8dc0ff;
+  border-radius: 15px;
+  max-width: 30%;
+  max-height: 500px;
+  box-shadow: 1px 1px 8px rgba(0,0,0,.9);
+  margin-left: 80px;
+}
+
+.profileImgCard img{
+  margin-bottom: 10px;
+  object-fit: cover;
+  width:200px;
+  height: 150px;
+  
+}
+.mainCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width:800px;
+  padding: 40px;
+  min-height: 500px;
+}
+.contactcol{
+    box-shadow: 1px 1px 8px rgba(255,255,255,.5);
+
+}
+
+.cardshared{
+  background-color: rgb(12 18 25 / 35%);
+  border: 2px solid #8dc0ff;
+  border-radius: 10px;
+}
+.cardsprofilecontainer{
+  box-shadow: 1px 1px 8px rgba(0,0,0,.9);
+  background-color: rgb(12 18 25 / 35%);
+  border: 2px solid #8dc0ff;
+  border-radius: 10px;
+  width: 60%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: 80px;
+}
+.profilebtns{
+
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+.profilebtns button{
+margin: 0 20px;
+}
+
+.card2{
+  border-radius: 5px;
+   border: 2px solid #8dc0ff;
+  margin: 15px 20px 10px 20px;
+  height: 50px;
 }
 
 .news-card img{
@@ -205,7 +275,7 @@ width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  border:1px solid gray;
+   border: 2px solid #8dc0ff;
   border-radius: 10px;
   height: 50px;
 }
@@ -241,6 +311,10 @@ width: 100%;
 
 .tipspage a{
   margin-top: 20px;
+}
+
+.tipspage{
+  margin: 50px 0;
 }
 
 .tipspage button{
@@ -289,6 +363,10 @@ word-wrap:break-word;
   width:200px;
 }
 
+.editprofile{
+  min-height:90vh ;
+}
+
 .buttonstips{
   width:96%;
   display: flex;
@@ -297,6 +375,39 @@ word-wrap:break-word;
 }
 .buttonstips button{
   position: relative;
+}
+
+.edittip{
+  align-self: center;
+  width: 1000px;
+  min-height: 100vh;
+}
+
+.authforms{
+  margin: 50px 0;
+}
+
+.nav-link{
+  position: relative;
+}
+
+.nav-link::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #104574;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:hover::before{
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
 }
 
 @keyframes dissapear {
