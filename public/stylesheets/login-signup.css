@@ -1,0 +1,143 @@
+/* Log in */
+
+.display-flex{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.login-box {
+
+  width: 50%;
+  height: 350px;
+  padding: 40px;
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box label {
+  width: 100%;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0 10px 10px;
+  font-size: 16px;
+  color: #03e9f4;
+      margin-top: 5px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  font-weight: 500;
+  
+}
+.login-box input:focus {
+   box-shadow: transparent;
+   
+   box-shadow: 0 0 0 0.25rem rgb(49 253 253 / 50%);
+}
+
+.login-box button {
+width: 40%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  letter-spacing: 4px;
+  background-color: transparent;
+  border: none;
+}
+
+.login-box button:focus{
+ background-color: transparent;
+ box-shadow: 0 0 0 0.25rem rgb(49 253 253 / 50%);
+}
+
+.login-box button:hover{
+ background-color: transparent;
+ border: 1px solid #03e8f470;
+}
+
+/* Sign-up */
+
+.important{
+  display: flex !important;
+}
+
+.signup-box{
+  text-align: center;
+  width: 80%;
+  height: 450px;
+  padding: 40px;
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+
+}
+.signup-box h2 {
+    margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+
+}
+.signup-box button{
+  width: 30%;
+  margin: 10px auto 10px auto;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  letter-spacing: 4px;
+  background-color: transparent;
+  border: none;
+}
+
+.signup-box button:hover{
+  background-color: transparent;
+ border: 1px solid #03e8f470;
+ }
+
+.signup-box label{
+  margin: 10px;
+}
+
+.signup-box input{
+   width: 100%;
+  padding: 10px 0 10px 10px;
+  font-size: 16px;
+  color: #03e9f4;
+      margin-top: 5px;
+ margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  font-weight: 500;
+}
+
+.signup-box input:focus{
+color: #03e9f4;
+background-color: transparent;
+box-shadow: 0 0 0 0.25rem rgb(49 253 253 / 50%);
+   }

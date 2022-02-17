@@ -1,0 +1,78 @@
+.home-display-flex{
+
+}
+
+
+.home-container{
+  
+border: 1px solid gray;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 450px;
+  margin: 30px 10px;
+  box-shadow: 1px 1px 8px rgba(255,255,255,.5);
+  justify-content: center;
+
+}
+
+h2{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.home-card{
+    height: 100%;
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  max-height: 350px;
+  background-color: transparent;
+  box-shadow: 1px 1px 8px rgba(255,255,255,.5);
+  justify-content: center;
+}
+
+.home-card-body{
+        display: flex;
+    flex-direction: column;
+    justify-content: end;
+  text-align: center;
+  background-color: transparent;
+}
+h5{
+    font-size: 1.15em;
+}
+.home-card-body a{
+  justify-content: center;
+  color: #01c7d1;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  letter-spacing: 4px;
+  background-color: transparent;
+  border: none;
+}
+
+.home-card-body a:focus{
+background-color: transparent;
+ border: 1px solid #03e8f470;
+ box-shadow: 0 0 0 0.25rem rgb(49 253 253 / 50%);
+ 
+}
+
+.home-card-body a:hover{
+background-color: transparent;
+ border: 1px solid #03e8f470;
+}
+
+.rebel-image{
+    height: 128px;
+}

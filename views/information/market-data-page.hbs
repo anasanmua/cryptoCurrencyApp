@@ -9,29 +9,25 @@
     <div class="container marketData">
 
         <h2>Market Data</h2>
+
+
         <div class="row">
+
+            {{#each selectedCryptos}}
             <div class="col">
                 <h3 class="waiting">Esperando respuesta de la API...</h3>
+                <figure>
+                    <p>{{id}}</p>
+                    <canvas id="chart{{@index}}"> </canvas>
+                </figure>
+            </div>
 
-                <figure>
-                    <p>Bitcoin data</p>
-                    <canvas id="chart99"> </canvas>
-                </figure>
-            </div>
-            <div class="col">
-                <figure>
-                    <p>Etherum data</p>
-                    <canvas id="chart98"> </canvas>
-                </figure>
-            </div>
-            <div class="col">
-                <figure>
-                    <p>Bitcoin-cash</p>
-                    <canvas id="chart97"> </canvas>
-                </figure>
-            </div>
+            <input hidden readonly class='crypto-id' value="{{id}}">
+            {{/each}}
 
         </div>
+
+
 
 
         <!-- ChartJS -->

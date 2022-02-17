@@ -1,6 +1,5 @@
 const axios = require('axios')
 
-
 class APIHandler {
     constructor(baseUrl) {
         this.axiosApp = axios.create({

@@ -41,20 +41,17 @@ router.get('/news', isLoggedIn, (req, res, next) => {
 router.get('/market-data', isLoggedIn, (req, res, next) => {
     const marketApi = new marketAPIHandler('https://api.coincap.io/v2')
 
-    // marketApi
-
-    //     .getCryptos()
-
-    //     .then(response => {
-    //         const cryptoId = response.data.data.id
-    //         cryptoId.map(elm => console.log((elm.priceUsd)))
-    //     })
-    //     .catch(err => console.log(err))
-
-    res.render('information/market-data-page')
-    // res.render('information/test-market-data')
-
+    // res.render('information/market-data-page')
+    marketApi
+        .getCryptos()
+        .then(elm => {
+            const cryptos = elm.data.data
+            const selectedCryptos = cryptos.slice(0, 20)
+            res.render('information/market-data-page', { selectedCryptos })
+        })
+        .catch(err => console.log(err))
 })
+
 
 
 //GET
@@ -87,8 +84,6 @@ router.post('/knowledge-form', (req, res, next) => {
             .then(() => res.redirect('/profile'))
             .catch(err => console.log(err))
     }
-
-
 })
 
 

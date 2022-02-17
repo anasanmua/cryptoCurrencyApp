@@ -1,0 +1,26 @@
+
+.news-card{
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 450px;
+  margin: 30px 10px;
+  box-shadow: 1px 1px 8px rgba(255,255,255,.5);
+  justify-content: center;
+}
+
+.news-card-body{
+  text-align: center;
+}
+.news-card-body a{
+  justify-content: center;
+  color: #01c7d1;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.news-card-body a:hover{
+
+  color: #06f3ff;
+
+}

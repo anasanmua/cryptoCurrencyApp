@@ -1,14 +1,8 @@
 const firstQuestionYesButton = document.querySelector('.firstQuestionYes')
-
 const firstQuestionNoButton = document.querySelector('.firstQuestionNo')
-
 const secondQuestionYesButton = document.querySelector('.secondQuestionYes')
-
 const secondQuestionNoButton = document.querySelector('.secondQuestionNo')
-
-
 const thirdQuestion = document.querySelector('.thirdQuestion')
-
 const fourthQuestion = document.querySelector('.fourthQuestion')
 
 firstQuestionYesButton.addEventListener('click', e => {

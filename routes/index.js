@@ -1,4 +1,3 @@
-
 const { setLoggedUser } = require('../middleware/user-guard.js')
 
 module.exports = app => {

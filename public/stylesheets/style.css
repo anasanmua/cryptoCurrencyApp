@@ -82,6 +82,8 @@ legend{
   height: 100%;
 }
 
+/* Knowledge */
+
 .knowledgequestions ul{
   list-style: none;
 }
@@ -127,77 +129,9 @@ padding-left: 20px;
   list-style-position: inherit;
 }
 
-/* Log in */
 
 
-.display-flex{
-  display: flex;
-  justify-content: space-evenly;
-}
 
-.login-box {
-
-  width: 50%;
-  height: 350px;
-  padding: 40px;
-  background: rgba(0,0,0,.5);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-}
-
-.login-box h2 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-}
-
-.login-box label {
-  width: 100%;
-}
-
-.login-box .user-box input {
-  width: 100%;
-  padding: 10px 0 10px 10px;
-  font-size: 16px;
-  color: #03e9f4;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  font-weight: 500;
-  
-}
-.login-box input:focus {
-   box-shadow: 0 0 0 0rem;
-}
-
-.login-box button {
-  margin-bottom: 10px;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 20px;
-  color: #03e9f4;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  letter-spacing: 4px;
-  background-color: transparent;
-  border: none;
-}
-
-.login-box button:focus{
- background-color: transparent;
-}
-
-.login-box button:hover{
- background-color: transparent;
- border: 1px solid #03e8f470;
-}
 
 /* Market Data */
 .marketData{
@@ -244,31 +178,7 @@ padding-left: 20px;
 
 }
 
-.news-card{
-  border: 1px solid gray;
-  border-radius: 10px;
-  padding: 20px;
-  max-height: 450px;
-  margin: 30px 10px;
-  box-shadow: 1px 1px 8px rgba(255,255,255,.5);
-  justify-content: center;
-}
 
-.news-card-body{
-  text-align: center;
-}
-.news-card-body a{
-  justify-content: center;
-  color: #01c7d1;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.news-card-body a:hover{
-
-  color: #06f3ff;
-
-}
 
 .tipCard{
   display:flex ;
