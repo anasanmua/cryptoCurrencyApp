@@ -10,6 +10,11 @@ class APIHandler {
         })
     }
 
+    getCryptos() {
+        console.log('getting cryptos')
+        return this.axiosApp.get('/assets')
+    }
+
     get30DaysBitcoin() {
         console.log('estoy pasando el market data de bitcoin')
         return this.axiosApp.get('/assets/bitcoin/history?interval=d1&start=1642287600000&end=1644966000000')

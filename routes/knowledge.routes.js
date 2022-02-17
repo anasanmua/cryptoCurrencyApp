@@ -10,6 +10,7 @@ const User = require("../models/User.model")
 const newsAPIHandler = require('../api-handlers/news-api')
 
 const marketAPIHandler = require('../api-handlers/market-data')
+const { response } = require("express")
 
 
 //Main page
@@ -38,11 +39,20 @@ router.get('/news', isLoggedIn, (req, res, next) => {
 
 //Information page
 router.get('/market-data', isLoggedIn, (req, res, next) => {
+    const marketApi = new marketAPIHandler('https://api.coincap.io/v2')
 
+    // marketApi
+
+    //     .getCryptos()
+
+    //     .then(response => {
+    //         const cryptoId = response.data.data.id
+    //         cryptoId.map(elm => console.log((elm.priceUsd)))
+    //     })
+    //     .catch(err => console.log(err))
 
     res.render('information/market-data-page')
-
-
+    // res.render('information/test-market-data')
 
 })
 
