@@ -61,7 +61,7 @@ a{
   color: white;
   min-height: 90vh;
   width: 100%;
-  background: url("https://i.imgur.com/DO7bYCt.png") no-repeat right bottom fixed,linear-gradient(#141e30, #243b55);
+  background: url("https://i.imgur.com/DO7bYCt.png") no-repeat right bottom,linear-gradient(#141e30, #243b55);
   background-size: 400px, auto;
 }
 
