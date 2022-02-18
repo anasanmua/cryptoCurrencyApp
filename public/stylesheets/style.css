@@ -50,6 +50,30 @@ a{
   border: 0;
 }
 
+/* Test form */
+
+.padding{
+  padding: 20px
+}
+.submit-button-test{
+   color: #03e9f4 !important;
+   border-color:  #03e9f4;
+   background-color: transparent;
+   text-transform: uppercase;
+}
+
+
+.submit-button-test:hover{
+  color: #fff!important;
+ background-color: #03e9f4;
+  border-color:  #03e9f4;
+}
+.submit-button-test:focus{
+  color: #03e9f4 !important;
+  box-shadow: 0 0 0 0.25rem rgb(49 253 253 / 50%);
+}
+
+
 .contactList{
   list-style: none;
 }
@@ -197,6 +221,7 @@ span .Cryptoapp{
 .slide:focus{
   color: #03e9f4 !important;
   box-shadow: 0 0 0 0.25rem rgb(49 253 253 / 50%);
+  background-color: transparent;
 }
 /* 
 Main Page */
@@ -526,6 +551,8 @@ footer h2 {
 .footer-row ul {
   list-style: none;
 }
+
+
 
 @media (hover: hover) and (pointer: fine) {
   .nav-link:hover::before{
