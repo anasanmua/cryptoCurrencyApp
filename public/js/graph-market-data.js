@@ -27,7 +27,9 @@ function displayGraph(url, canvas) {
             datasets: [
                 {
                     data:
-                        marketData.map(elm => (elm.priceUsd))
+                        marketData.map(elm => (elm.priceUsd)),
+
+                    borderColor: 'rgba(39, 226, 245, 0.65)'
 
 
                 }
