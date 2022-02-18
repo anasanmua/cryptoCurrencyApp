@@ -10,7 +10,6 @@ nav{
   position: absolute;
   width: 100%;
   min-height: 60px;
-  border-bottom: 1px solid white;
 }
 
 a{
@@ -92,6 +91,7 @@ legend{
 }
 
 .knowledgearticles{
+  background-color: rgb(12 18 25 / 35%);
   border: 2px solid #03e9f4;
   color: #03e9f4;
   padding: 30px;
@@ -137,7 +137,11 @@ padding-left: 20px;
   list-style-position: inherit;
 }
 
-
+span .Cryptoapp{
+  color :#1fcad3;
+  font-weight: 800;
+  font-style: italic;
+}
 
 
 
@@ -163,8 +167,6 @@ padding-left: 20px;
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 4px;
-    /* border-radius: 10px;
-    border: 1px solid #03e9f4 ; */
    
   
 }
@@ -214,6 +216,9 @@ article {
 .main-page-links{
   font-size: 30px;
 }
+.main-page-links .secondary{
+font-size: 0.9em;
+}
 
 .main-page-links a:hover{
 background-color: transparent;
@@ -225,7 +230,10 @@ background-color: transparent;
 
 }
 
-
+.infoImg{
+  width: 600px;
+  margin-top: 30px;
+}
 
 
 
@@ -236,7 +244,6 @@ background-color: transparent;
 .profileImgCard{
   border: 2px solid gray;
   max-width: 30%;
-  height: 200px;
 }
 
 .cardbtn{
@@ -294,8 +301,8 @@ background-color: transparent;
   align-items: center;
   border: 2px solid #8dc0ff;
   border-radius: 10px;
-  min-width: 80vw;
-  height: 70vh;
+  min-width: 1300px;
+  height: 650px;
   padding: 30px;
   background-color: rgb(12 18 25 / 35%);
 }
@@ -463,7 +470,7 @@ word-wrap:break-word;
 }
 
 .editprofile{
-  min-height:90vh ;
+  min-height:750px;
 }
 
 .buttonstips{
@@ -474,12 +481,6 @@ word-wrap:break-word;
 }
 .buttonstips button{
   position: relative;
-}
-
-.edittip{
-  align-self: center;
-  width: 1000px;
-  min-height: 100vh;
 }
 
 .authforms{

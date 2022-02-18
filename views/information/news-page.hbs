@@ -7,13 +7,13 @@
                 <p class="pageIndex"> 1 </p>
                 <button class="btn btn-outline-primary nextnews slide"> >> </button>
     </div>
+
     <div class="row justify-content-center newsCardsContainer">
         {{#each news}}
         {{>newsCard}}
         {{/each}}
     </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="./../../js/newsAPIHandler.js"></script>
 <script src="./../../js/news-list.js"></script>
