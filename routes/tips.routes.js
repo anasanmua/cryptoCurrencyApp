@@ -1,7 +1,7 @@
 const router = require("express").Router()
 const { tipOwner } = require('./../utils')
 const { isLoggedIn } = require('../middleware/route-guard')
-const { isAdmin } = require('../middleware/User-guard')
+const { isAdmin } = require('../middleware/user-guard')
 const Tip = require('./../models/Tips.model')
 
 
