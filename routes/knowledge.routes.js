@@ -11,6 +11,7 @@ const newsAPIHandler = require('../api-handlers/news-api')
 
 const marketAPIHandler = require('../api-handlers/market-data')
 const { response } = require("express")
+const { removeListener } = require("../models/User.model")
 
 
 //Main page
@@ -66,25 +67,18 @@ router.post('/knowledge-form', (req, res, next) => {
 
     const { _id } = req.session.currentUser
     const { question1, question2, question3, question4 } = req.body
-
-    if (question1 === 'yes' && question2 === 'yes' && question3 === 'no' && question4 === 'no' || question1 === 'yes' && question2 === 'yes' && question3 === 'yes' && question4 === 'no') {
-        User
-            .findByIdAndUpdate(_id, { role: 'INTERMEDIATE' })
-            .then(() => res.redirect('/profile'))
-            .catch(err => console.log(err))
-
-    } else if (question1 === 'yes' && question2 === 'yes' && question3 === 'no' && question4 === 'yes') {
-        User
-            .findByIdAndUpdate(_id, { role: 'ADVANCED' })
-            .then(() => res.redirect('/profile'))
-            .catch(err => console.log(err))
-
+    let role
+    if (question1 === 'yes' && question2 === 'yes' && question3 === 'yes' && question4 === 'no' || question1 === 'yes' && question2 === 'yes' && question3 === 'yes' && question4 == undefined) {
+        role = 'INTERMEDIATE'
+    } else if (question1 === 'yes' && question2 === 'yes' && question3 === 'no' && question4 === 'yes' || question1 === 'yes' && question2 === 'yes' && question3 === 'yes' && question4 === 'yes') {
+        role = 'ADVANCED'
     } else {
-        User
-            .findByIdAndUpdate(_id, { role: 'ADVANCED' })
-            .then(() => res.redirect('/profile'))
-            .catch(err => console.log(err))
+        role = 'BEGINNER'
     }
+    User
+        .findByIdAndUpdate(_id, { role }, { new: true })
+        .then(() => res.redirect('/profile'))
+        .catch(err => console.log(err))
 })
 
 

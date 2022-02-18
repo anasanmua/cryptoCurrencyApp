@@ -1,0 +1,6 @@
+.loading{
+    height:50px;
+    width: 50px;
+    border: 6px solid white;
+    border-radius: 50%;
+}
