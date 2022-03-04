@@ -25,6 +25,7 @@ router.get('/main', isLoggedIn, (req, res, next) => {
 
 router.get('/news', isLoggedIn, (req, res, next) => {
     const compareAPI = new newsAPIHandler('https://min-api.cryptocompare.com/data/')
+
     compareAPI
         .getFullListNews()
         .then(response => {

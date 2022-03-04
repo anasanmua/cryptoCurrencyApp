@@ -30,7 +30,7 @@ router.post("/log-in", (req, res, next) => {
 
                     res.redirect('/knowledge-form')
                 } else {
-                    res.redirect('/profile')
+                    res.redirect('/main')
                 }
             }
         })
